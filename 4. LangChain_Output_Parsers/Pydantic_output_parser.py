@@ -8,11 +8,13 @@ load_dotenv()
 
 model = ChatGroq(model="llama-3.3-70b-versatile")
 
+#schema for how we want result from model
 class Person(BaseModel):
     name: str = Field(description="name of the person")
     age : int = Field(gt=18, description="Age of the Person")
     city: str = Field(description="name of the city person belongs")
 
+# parser parses prompt and gives refined data without meta data
 parser = PydanticOutputParser(pydantic_object=Person)
 
 template = PromptTemplate(
