@@ -8,7 +8,7 @@ model = ChatGroq(model="llama-3.3-70b-versatile")
 
 #chat_history is used to remember chat between agent and user without chathistory it cant remember what was there chat 
 chat_history = [
-    SystemMessage(content='Ypu are a Helpful Assistent')
+    SystemMessage(content='You are a Helpful Assistent')
 ]
 
 while True:
